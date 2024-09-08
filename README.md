@@ -1,7 +1,7 @@
 # Title: Othello Game
 
 ## Project Description
-This is a simple implementation of the classic board game Othello (also known as Reversi). This project demonstrates game mechanics, including player input, game state management, and AI functionality.
+This is an implementation of the classic board game Othello (also known as Reversi). This project demonstrates game mechanics, including player input, game state management, and AI functionality.
 
 ## Features
 - Play against an AI with strategic decision-making capabilities.
