@@ -9,13 +9,17 @@ while error is True:
     color = input("Press 1 for white, or 2 for black: ")
 
     if color == "1":
-        human = Player("human player", "white")
-        ai = Player("computer player", "black")
+        human = Player("human", "white")
+        ai = Player("computer", "black")
+        game.create_player("human", "white")
+        game.create_player("computer", "black")
         error = False
         player_turn = False
     elif color == "2":
-        human = Player("human player", "black")
-        ai = Player("computer player", "white")
+        human = Player("human", "black")
+        ai = Player("computer", "white")
+        game.create_player("human", "black")
+        game.create_player("computer", "white")
         error = False
         player_turn = True
     else:
@@ -53,9 +57,12 @@ while game_over is False:
 
         result = game.game_ai(ai.get_player_color(), human.get_player_color())
 
-        if result is not None:
-            print(result)
+        print(ai.get_player_color(), "chose", result)
+
+        if game.return_available_positions(human.get_player_color()) == []:
+            color_count = game.count_colors()
+            print("Game is ended white piece: " + str(color_count[0]) + " black piece: " + (color_count[0]))
+            print(game.return_winner())
             game_over = True
-            error = False
 
         player_turn = True

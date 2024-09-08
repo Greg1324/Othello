@@ -73,6 +73,19 @@ class Othello:
                 else:
                     print(self._board[i][j], end=" ")
 
+    def count_colors(self):
+        white_count = 0
+        black_count = 0
+        # Look through the entire board to count up the white and black pieces
+        for i in range(1, 9):
+            for j in range(1, 9):
+                if self._board[i][j] == "X":
+                    black_count += 1
+                elif self._board[i][j] == "O":
+                    white_count += 1
+
+        return [white_count, black_count]
+
     def create_player(self, player_name, color):
         """
         Adds a new player object to Othello's player list
@@ -272,6 +285,7 @@ class Othello:
             move = val_arr[0]
 
         self.play_game(color, move[1])
+        return move[1]
 
     # Helper functions for determining possible positions
     def right_row_pos(self, i, j, other_piece, positions):
