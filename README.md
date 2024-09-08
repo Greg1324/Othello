@@ -17,7 +17,7 @@ The human player and AI are initialized based on the chosen color.
 
 Game Loop:
 The game alternates turns between the human player and the AI.
-The human player inputs their move. Make sure to enter the coordinate in this format: 1, 1
+The human player inputs their move (make sure to enter the coordinate in this format: 1, 1).
 The AI calculates and makes its move.
 The game board is printed after each move, and the game continues until there are no valid moves left.
 The winner will have most pieces left on the board at the end of the game.
